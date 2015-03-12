@@ -1,0 +1,13 @@
+%CONFIG = (
+    'Xvfb' => {
+        'bin'     => '/usr/bin/Xvfb',
+        'args'    => '-ac -retro -screen 0 1024x768x16',
+        'display' => ':0'
+    },
+    'screenshot' => {
+        'interval' => 5,
+        'prog'     => '/usr/bin/import',
+        'args'     => '-window root /var/www/x11.nilsding.org/screen.png'
+    },
+    'wm' => '/usr/bin/awesome'
+);

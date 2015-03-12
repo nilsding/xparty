@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>XParty!</title>
+  <style>
+  body, h1, h2, h3, h4 { text-align: center; font-family: monospace; margin-left: 0; margin-right: 0; }
+  pre, p { text-align: left; margin-left: 5vw; margin-right: 0; }
+  pre { background: #eeeeee; }
+  #screen { width: 100vw; max-width: 1024px; display: block; margin: 0 auto; }
+  </style>
+</head>
+<body>
+<h1>X<small>11</small>Party!</h1>
+<a href="/screen.png"><img id="screen" src="/screen.png"></a>
+
+<h2>What is this?</h2>
+
+<p>
+This is an X server (Xvfb)!  You can display X clients (such as <code>xclock</code>) running on your computer on it.
+<br />
+Give it a try:
+</p>
+
+<pre>
+$ export DISPLAY=x11.nilsding.org:0
+$ xclock &
+</pre>
+
+<p>
+The screenshot updates every 5 seconds.
+</p>
+
+<small style="padding-top: 12px; display: block;">
+Made by <a href="http://nilsding.org">nilsding</a> in 2015
+·
+Hosted on <a href="https://www.digitalocean.com/">DigitalOcean</a>
+·
+Source code at <a href="https://github.com/nilsding/xparty">GitHub</a>
+</small>
+
+<script>
+window.setInterval(function() {
+  document.getElementById("screen").src = "/screen.png?" + (new Date()).getTime();
+}, 5000);
+</script>
+</body>
+</html>
